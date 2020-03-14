@@ -24,5 +24,5 @@ const Tab2: React.FC = () => {
     </IonPage>
   );
 };
-
+4
 export default Tab2;
