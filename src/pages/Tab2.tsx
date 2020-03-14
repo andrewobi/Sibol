@@ -1,6 +1,7 @@
 import React from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
+import CameraPreview from '../components/CameraPreview';
 import './Tab2.css';
 
 const Tab2: React.FC = () => {
@@ -18,6 +19,7 @@ const Tab2: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <ExploreContainer name="Tab 2 page" />
+        <CameraPreview></CameraPreview>
       </IonContent>
     </IonPage>
   );
