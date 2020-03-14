@@ -5,6 +5,7 @@
   "dependencies": {
     "@capacitor/core": "1.5.0",
     "@ionic-native/camera": "^5.22.0",
+    "@ionic-native/camera-preview": "^5.22.0",
     "@ionic-native/core": "^5.21.6",
     "@ionic-native/file": "^5.22.0",
     "@ionic-native/keyboard": "^5.22.0",
