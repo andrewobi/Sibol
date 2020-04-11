@@ -10,7 +10,7 @@
     "@ionic-native/file": "^5.22.0",
     "@ionic-native/keyboard": "^5.22.0",
     "@ionic-native/sqlite": "^5.22.0",
-    "@ionic/pwa-elements": "^1.5.1",
+    "@ionic/pwa-elements": "^1.5.2",
     "@ionic/react": "^5.0.0",
     "@ionic/react-hooks": "0.0.6",
     "@ionic/react-router": "^5.0.0",
