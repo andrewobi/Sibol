@@ -13,7 +13,26 @@
 
   <body>
     <script>
-        
+        let videoClassifer;
+        let video;
+        let resultsAI;
+
+        function setup(){
+           video = createCapture(VIDEO) ;
+           videoClassifer = ml5.imageClassifier('MobileNet', video, modelReady);
+        }
+        function gotResult(err, results){
+            resultsAI.html(results[0].label + ' ' + nf(results[0].confidence, 0, 2));
+            classifyVideo();
+        }
+        function classifyVideo() {
+            videoClassifer.classify(HTMLVideoElement, gotResult);
+        }
+        function modelReady() {
+            console.log('Model is Ready !!!! Yeyy!!!');
+            classifyVideo();
+            resultsAI = createP('Loading model and video...');
+        }
 
     </script>
   </body>
