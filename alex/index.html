@@ -1,12 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ML5 Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- p5 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+    <!-- ml5 -->
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+  </head>
 
+  <body>
+    <script>
+        let videoClassifer;
+        let video;
+        let resultsAI;
 
+        function setup(){
+           video = createCapture(VIDEO) ;
+           videoClassifer = ml5.imageClassifier('MobileNet', video, modelReady);
+        }
+        function gotResult(err, results){
+            resultsAI.html(results[0].label + ' ' + nf(results[0].confidence, 0, 2));
+            classifyVideo();
+        }
+        function classifyVideo() {
+            videoClassifer.classify(HTMLVideoElement, gotResult);
+        }
+        function modelReady() {
+            console.log('Model is Ready !!!! Yeyy!!!');
+            classifyVideo();
+            resultsAI = createP('Loading model and video...');
+        }
 
-
-
-
-
-
-
-
-
-
+    </script>
+  </body>
+</html>
